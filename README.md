@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## Notes - AB
+- https://testing-library.com/docs/queries/about/#priority (for querying test accessibility and finding elements)
+
+- https://www.w3.org/TR/wai-aria/#role_definitions (for role defination)
+
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -70,7 +80,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-## Notes - AB
-- https://testing-library.com/docs/queries/about/#priority (for querying test accessibility and finding elements)
-
-- https://www.w3.org/TR/wai-aria/#role_definitions (for role defination)
