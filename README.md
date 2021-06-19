@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Notes - AB
+- https://testing-library.com/docs/queries/about/#priority (for querying test accessibility and finding elements)
+
+- https://www.w3.org/TR/wai-aria/#role_definitions (for role defination)
