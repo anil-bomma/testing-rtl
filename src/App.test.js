@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
-
+import { replaceCamcelCase } from "./App";
 test('renders learn react link', () => {
   render(<App />); // will create and render virtual dom for given JSX element
   // const linkElement = screen.getByText(/learn react/i); // screen helps you to aceess, find element by display text
@@ -69,7 +69,7 @@ test('button will turn grey when its disable', () => {
 
   fireEvent.click(checkbox);
   expect(checkbox).toBeChecked();
-  
+
   const button = screen.getByRole('button', { name: /change to red/i });
   expect(button).toHaveStyle({ backgroundColor: 'grey' });
 
@@ -77,6 +77,21 @@ test('button will turn grey when its disable', () => {
   fireEvent.click(checkbox);
   expect(checkbox).not.toBeChecked();
   expect(button).toHaveStyle({ backgroundColor: 'red' });
+});
+
+// grouping test
+describe('space before camel case capital letter', () => {
+  test('Works for no inner capital letter ', () => {
+    expect(replaceCamcelCase('Red')).toBe('Red');
+  });
+
+  test('Works for no inner capital letter ', () => {
+    expect(replaceCamcelCase('MidnightBlue')).toBe('Midnight Blue');
+  });
+
+  test('Works for no mulitple inner capital letter ', () => {
+    expect(replaceCamcelCase('MediumVioletRed')).toBe('Medium Violet Red');
+  });
 });
 
 

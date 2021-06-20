@@ -2,6 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 
+export const replaceCamcelCase = (name) => {
+  return name.replace(/\B([A-Z])\B/g, ' $1');
+};
+
 function App() {
   const [btnColor, setBtnColor] = useState('red');
   const [btnDisable, setBtnDisable] = useState(false);
