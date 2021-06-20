@@ -44,6 +44,7 @@ function App() {
         </button>
 
         <input
+          label="myCheckBox"
           type='checkbox'
           onChange={handleCheckbox}></input>
       </header>

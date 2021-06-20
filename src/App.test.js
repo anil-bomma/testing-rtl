@@ -24,22 +24,22 @@ test('button has correct initial color ', () => {
 
 test('button trun blue when clicked ', () => {
   render(<App />);
-  const colorButton = screen.getByRole('button', { name: /Change to Blue/i});
+  const colorButton = screen.getByRole('button', { name: /Change to Blue/i });
 
   // click button
   fireEvent.click(colorButton);
 
   // expect the background color to be blue
-  expect(colorButton).toHaveStyle({backgroundColor: 'blue'});
-  
+  expect(colorButton).toHaveStyle({ backgroundColor: 'blue' });
+
   //expect the button text to be 'Change to red'
   expect(colorButton.textContent).toBe('Change to Red');
 });
 
 test('intitial condition', () => {
-  render(<App/>);
+  render(<App />);
   // check that the button start out enable
-  const button = screen.getByRole('button', {name: /change to blue/i});
+  const button = screen.getByRole('button', { name: /change to blue/i });
   expect(button).toBeEnabled();
 
   // check that the checkbox starts out unchecked
@@ -49,9 +49,9 @@ test('intitial condition', () => {
 
 
 test('button will disbale/enable with checkbook', () => {
-  render(<App/>);
-  const checkbox = screen.getByRole('checkbox');
-  const button = screen.getByRole('button', {name: /change to blue/i});
+  render(<App />);
+  const checkbox = screen.getByRole('checkbox', { label: /myCheckBox/i });
+  const button = screen.getByRole('button', { name: /change to blue/i });
 
   fireEvent.click(checkbox);
   expect(checkbox).toBeChecked();
