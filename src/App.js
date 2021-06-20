@@ -4,12 +4,22 @@ import { useState } from 'react';
 
 function App() {
   const [btnColor, setBtnColor] = useState('red');
+  const [btnDisable, setBtnDisable] = useState(false);
+
 
   const handleBtnColor = () => {
     if (btnColor === 'red') {
       setBtnColor('blue');
     } else {
       setBtnColor('red');
+    }
+  };
+
+  const handleCheckbox = () => {
+    if (btnDisable) {
+      setBtnDisable(false);
+    } else {
+      setBtnDisable(true);
     }
   };
 
@@ -25,9 +35,17 @@ function App() {
           Learn React
         </a>
 
-        <button style={{ backgroundColor: btnColor }} onClick={handleBtnColor}>
+        <button
+          style={{ backgroundColor: btnColor }}
+          onClick={handleBtnColor}
+          disabled={btnDisable}
+        >
           {btnColor === 'red' ? 'Change to Blue' : 'Change to Red'}
         </button>
+
+        <input
+          type='checkbox'
+          onChange={handleCheckbox}></input>
       </header>
     </div>
   );
