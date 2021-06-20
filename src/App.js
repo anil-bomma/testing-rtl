@@ -1,14 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [btnColor, setBtnColor] = useState('red');
+
+  const handleBtnColor = () => {
+    if (btnColor === 'red') {
+      setBtnColor('blue');
+    } else {
+      setBtnColor('red');
+    }
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -17,6 +24,10 @@ function App() {
         >
           Learn React
         </a>
+
+        <button style={{ backgroundColor: btnColor }} onClick={handleBtnColor}>
+          {btnColor === 'red' ? 'Change to Blue' : 'Change to Red'}
+        </button>
       </header>
     </div>
   );

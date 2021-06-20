@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 
 test('renders learn react link', () => {
@@ -8,34 +8,33 @@ test('renders learn react link', () => {
   expect(linkElement).toBeInTheDocument(); // assertion - causes tests to pass and fail
 });
 
+// implementing in true TDD
+test('button has correct initial color ', () => {
+  render(<App />);
+  // find an element with a role of button and text of 'Change to Blue
+  const colorButton = screen.getByRole('button', { name: /Change to Blue/i });
 
-/* 
-Assertions
-- these will determine the test pass or fail 
-expect(linkElement).toBeInTheDocument();
+  // when role doesn't exist -- comment it and see. more helpfull commnet in terminal
+  // const colorButton = screen.getByRole('butt', { name: /Change to Blue/i });
 
-expect -- jest global method
-expect() -- jet will examine
-.toBeInTheDocument -- matches comes from jest dom
-() - sometime these matches have argument
-*/
+  // expect the background color to be red
+  expect(colorButton).toHaveStyle({ backgroundColor: 'red' });
+});
 
 
+test('button trun blue when clicked ', () => {
+  render(<App />);
+  const colorButton = screen.getByRole('button', { name: /Change to Blue/i});
 
-/*
-jest-dom are dom based matcher can be applied to the virtual dom.
-(toBeInTheDocument)
-- these are dom based matcher can't be applied to node code
-*/
+  // click button
+  fireEvent.click(colorButton);
 
-/*
+  // expect the background color to be blue
+  expect(colorButton).toHaveStyle({backgroundColor: 'blue'});
+  
+  //expect the button text to be 'Change to red'
+  expect(colorButton.textContent).toBe('Change to Red');
 
-JEST - an test runner
+});
 
-RTL (react testing library)
--> render component in virtual dom - render()
--> searcging virtual dom - screen()
--> interacting with virtual dom - fireEvent()
--> need a test runner (jest is recommend by rtl)
 
-*/
