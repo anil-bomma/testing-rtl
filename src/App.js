@@ -17,8 +17,10 @@ function App() {
 
   const handleCheckbox = () => {
     if (btnDisable) {
+      setBtnColor('red');
       setBtnDisable(false);
     } else {
+      setBtnColor('grey');
       setBtnDisable(true);
     }
   };

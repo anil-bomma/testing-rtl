@@ -63,4 +63,21 @@ test('button will disbale/enable with checkbook', () => {
 });
 
 
+test('button will turn grey when its disable', () => {
+  render(<App />);
+  const checkbox = screen.getByRole('checkbox', { label: /myCheckBox/i });
+
+  fireEvent.click(checkbox);
+  expect(checkbox).toBeChecked();
+  
+  const button = screen.getByRole('button', { name: /change to red/i });
+  expect(button).toHaveStyle({ backgroundColor: 'grey' });
+
+
+  fireEvent.click(checkbox);
+  expect(checkbox).not.toBeChecked();
+  expect(button).toHaveStyle({ backgroundColor: 'red' });
+});
+
+
 
