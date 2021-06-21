@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import SummaryForm from "./pages/summary/SummaryForm"
 
 export const replaceCamcelCase = (name) => {
   return name.replace(/\B([A-Z])\B/g, ' $1');
@@ -50,12 +51,14 @@ function App() {
         </button>
 
         <input
-          label="myCheckBox"
           type='checkbox'
-          onChange={handleCheckbox}></input>
+          id="disable-button-checkbox"
+          onChange={handleCheckbox}>
+        </input>
+        <label htmlFor="disable-button-checkbox">myCheckBox</label>
 
 
-
+        <SummaryForm />
       </header>
     </div>
   );
