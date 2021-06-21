@@ -1,4 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 import SummaryForm from "../SummaryForm";
 import userEvent from "@testing-library/user-event";
 
@@ -36,5 +40,26 @@ describe("checkbox test", () => {
 });
 
 describe("popover", () => {
-  test("popover intial render, mouseover and mouseout", () => {});
+  test("popover intial render, mouseover and mouseout", async () => {
+    // popover starts out hidden
+    render(<SummaryForm />);
+    let nullPopover = screen.queryByText(
+      /No ice cream will actually be delivered/
+    );
+    expect(nullPopover).toBeNull();
+
+    // popover appear upon mouseover of check box label
+    const text = screen.getByText(/terms and conditions/i);
+    userEvent.hover(text);
+    const popover = screen.queryByText(
+      /No ice cream will actually be delivered/
+    );
+    expect(popover).toBeInTheDocument();
+
+    // popover disapper when we mouse out
+    userEvent.unhover(text);
+    await waitForElementToBeRemoved(() =>
+      screen.getByText(/No ice cream will actually be delivered/)
+    );
+  });
 });
