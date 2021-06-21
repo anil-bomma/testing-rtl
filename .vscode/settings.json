@@ -1,9 +1,11 @@
 {
-    "eslint.options": {
-        "configFile": ".esslintrc.json"
-    },
-    "eslint.validate": ["javascript", "javascriptreact"],
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true 
-    }
+  "eslint.options": {
+    "configFile": ".esslintrc.json"
+  },
+  "eslint.validate": ["javascript", "javascriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
 }
