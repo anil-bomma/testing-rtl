@@ -57,7 +57,6 @@ function App() {
         </input>
         <label htmlFor="disable-button-checkbox">myCheckBox</label>
 
-
         <SummaryForm />
       </header>
     </div>

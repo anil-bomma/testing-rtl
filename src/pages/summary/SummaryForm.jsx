@@ -8,8 +8,8 @@ export default function SummaryForm() {
   const [tcChecked, setTcChecked] = useState(false);
 
   const popover = (
-    <Popover id="termsandconditions-popover">
-      No ice cream will actually be delivered
+    <Popover>
+      <Popover.Content>No ice cream will actually be delivered</Popover.Content>
     </Popover>
   );
 

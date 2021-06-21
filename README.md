@@ -36,6 +36,11 @@ RTL (react testing library)
 
 - https://github.com/testing-library/jest-dom (jest-dom matcher)
 
+- screen Query method - command[All]ByQueryType
+- command - get(expect in DOM), query(expect not in DOM), find (expect elemnet to apper async)
+- All - include(for all matches) exclude(for exact match)
+- QuertType - Role, AltText, Text, PlaceholderTex, LabelText, DisplayValue
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,5 +1,7 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import SummaryForm from "../SummaryForm";
+import userEvent from "@testing-library/user-event";
+
 describe("checkbox test", () => {
   test("intial conditions", () => {
     render(<SummaryForm />);
@@ -24,11 +26,15 @@ describe("checkbox test", () => {
       name: /confirm order/i,
     });
 
-    fireEvent.click(checkbox);
+    userEvent.click(checkbox);
     expect(checkbox).toBeEnabled();
     expect(button).toBeEnabled();
 
-    fireEvent.click(checkbox);
+    userEvent.click(checkbox);
     expect(button).toBeDisabled();
   });
+});
+
+describe("popover", () => {
+  test("popover intial render, mouseover and mouseout", () => {});
 });
