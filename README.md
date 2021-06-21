@@ -2,22 +2,23 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-
 ## Notes - AB
+
 Assertions
-- these will determine the test pass or fail 
-expect(linkElement).toBeInTheDocument();
+
+- these will determine the test pass or fail
+  expect(linkElement).toBeInTheDocument();
 
 expect -- jest global method
 expect() -- jet will examine
 .toBeInTheDocument -- matches comes from jest dom
 () - sometime these matches have argument
 
-
 jest-dom are dom based matcher can be applied to the virtual dom.
 (toBeInTheDocument)
+
 - these are dom based matcher can't be applied to node code
-*/
+  \*/
 
 JEST - an test runner
 
@@ -27,16 +28,13 @@ RTL (react testing library)
 -> interacting with virtual dom - fireEvent()
 -> need a test runner (jest is recommend by rtl)
 
-
 - https://testing-library.com/docs/queries/about/#priority (for querying test accessibility and finding elements)
 
 - as per testing library guide what priority we should use to find element by virtual dom
 
 - https://www.w3.org/TR/wai-aria/#role_definitions (for role defination)
 
-
 - https://github.com/testing-library/jest-dom (jest-dom matcher)
-
 
 ## Available Scripts
 
